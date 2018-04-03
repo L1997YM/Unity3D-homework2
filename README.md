@@ -44,8 +44,8 @@
 	   }
    ~~~
    3.使用Vector3建立增量
-~~~
-    public float speed;
+   ~~~
+        public float speed;
         public float speed_down = 0f;
         void Start()
         {
@@ -58,7 +58,7 @@
 	   Vector3 temp = new Vector3 (speed * Time.deltaTime, -speed_down * Time.deltaTime, 0);  
 	   transform.position += temp;  
         }
-~~~
+   ~~~
 ***
 * *编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件*
 ~~~
