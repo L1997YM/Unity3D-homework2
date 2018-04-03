@@ -127,7 +127,7 @@ public class test1 : MonoBehaviour {
 ***
 2.编程实践
 * 列出游戏中提及的事物（Objects）<br/>
-  牧师、魔鬼、小船、两岸
+  牧师、魔鬼、小船、两岸<br/>
   ![](https://github.com/L1997YM/Unity3D-homework2/blob/master/%E7%89%A7%E5%B8%88%E4%B8%8E%E9%AD%94%E9%AC%BC%E5%AF%B9%E8%B1%A1.png)
 * 用表格列出玩家动作表（规则表），注意，动作越少越好<br/>
 
