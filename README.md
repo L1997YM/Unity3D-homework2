@@ -61,6 +61,7 @@
    ~~~
 * *写一个程序，实现一个完整的太阳系， 其他星球围绕太阳的转速必须不一样，且不在一个法平面上。*
 ~~~
+//实现行星和月球的公转
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -101,6 +102,26 @@ public class Roundsun : MonoBehaviour {
 		Uranus.RotateAround (sun.position, Vector3.up, 8 * Time.deltaTime);
 		Nepture.RotateAround (sun.position, Vector3.down, 6 * Time.deltaTime);
 	}
+}
+~~~
+~~~
+//实现自转
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class test1 : MonoBehaviour {
+
+	  // Use this for initialization
+	  void Start () 
+	  {
+		this.transform.rotation = Quaternion.AngleAxis(30,Vector3.up);
+	  }
+
+	  void Update()
+	  {
+	  	this.transform.rotation *= Quaternion.AngleAxis (100 * Time.deltaTime, Vector3.up);
+	  }
 }
 ~~~
 ***
