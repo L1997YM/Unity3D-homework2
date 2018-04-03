@@ -43,7 +43,7 @@
 		   transform.Translate(Vector3.down * speed_down * Time.deltaTime);
 	   }
    ~~~
-         3.使用Vector3建立增量
+   3.使用Vector3建立增量
    ~~~
            public float speed;
            public float speed_down = 0f;
@@ -59,49 +59,49 @@
 	          transform.position += temp;  
            }
    ~~~
-***
-* *编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件*
+* *写一个程序，实现一个完整的太阳系， 其他星球围绕太阳的转速必须不一样，且不在一个法平面上。*
 ~~~
-      using System.Collections;
-      using System.Collections.Generic;
-      using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
-      public class NewBehaviourScript : MonoBehaviour {
-
-        void Awake()
-        {
-           Debug.Log("Awake");
-        }
-        void Start () 
-        {
-           Debug.Log("Start");
-        }
-        void Update () 
-        {
-           Debug.Log("Update");
-        }
-        void FixedUpdate()
-        {
-           Debug.Log("FixedUpdate");
-        }
-        void LateUpdate()
-        {
-           Debug.Log("LateUpdate");
-        }
-
-        void OnGUI()
-        {
-           Debug.Log("OnGUI");
-        }
-        void OnDisable()
-        {
-           Debug.Log("OnDisable");
-        }
-        void OnEnable()
-        {
-           Debug.Log("OnEnable");
-        }
-      }
+public class Roundsun : MonoBehaviour {
+	public Transform sun;
+	public Transform Mercury;
+	public Transform Venus;
+	public Transform earth;
+	public Transform moon;
+	public Transform Mars;
+	public Transform Jupiter;
+	public Transform Saturn;
+	public Transform Uranus;
+	public Transform Nepture;
+	// Use this for initialization
+	void Start () {
+		sun.position = Vector3.zero;
+		Mercury.position = new Vector3 (6, 0, 0);
+		Venus.position = new Vector3 (10, 0, 1);
+		earth.position = new Vector3 (14, 0, 0);
+		moon.position = new Vector3 (16,0, 0);
+		Mars.position = new Vector3 (18, 0, -1);
+		Jupiter.position = new Vector3 (22, 0, 0);
+		Saturn.position = new Vector3 (26, 0, 1);
+		Uranus.position = new Vector3 (30, 0, 0);
+		Nepture.position = new Vector3 (34, 0, -1);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		Mercury.RotateAround (sun.position, Vector3.down, 20 * Time.deltaTime);
+		Venus.RotateAround (sun.position, Vector3.up, 18 * Time.deltaTime);
+		earth.RotateAround (sun.position, Vector3.down, 16 * Time.deltaTime);
+		moon.transform.RotateAround (earth.position,Vector3.up,359 * Time.deltaTime);
+		Mars.RotateAround (sun.position, Vector3.down, 14 * Time.deltaTime);
+		Jupiter.RotateAround (sun.position, Vector3.down, 12 * Time.deltaTime);
+		Saturn.RotateAround (sun.position, Vector3.down, 10 * Time.deltaTime);
+		Uranus.RotateAround (sun.position, Vector3.up, 8 * Time.deltaTime);
+		Nepture.RotateAround (sun.position, Vector3.down, 6 * Time.deltaTime);
+	}
+}
 ~~~
 ***
 * *查找脚本手册，了解 GameObject，Transform，Component 对象*
