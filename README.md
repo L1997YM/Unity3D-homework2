@@ -14,11 +14,11 @@
    public class NewBehaviourScript : MonoBehaviour {
 	   public float speed;
 	   public float speed_down = 0f;
-	   private void Start()
+	   void Start()
 	   {
   
 	   }
-	   private void Update()
+	   void Update()
 	   {
 		   speed = 1f;
 		   speed_down += 0.01f;
@@ -31,11 +31,11 @@
    ~~~
            public float speed;
 	   public float speed_down = 0f;
-	   private void Start()
+	   void Start()
 	   {
      
            }
-	   private void Update()
+	   void Update()
 	   {
 		   speed = 1f;
 		   speed_down += 0.01f;
@@ -43,7 +43,7 @@
 		   transform.Translate(Vector3.down * speed_down * Time.deltaTime);
 	   }
    ~~~
-   3.使用Vector3建立增量
+         3.使用Vector3建立增量
    ~~~
            public float speed;
            public float speed_down = 0f;
