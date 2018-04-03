@@ -125,4 +125,5 @@ public class test1 : MonoBehaviour {
 }
 ~~~
 ***
-
+2.编程实践
+* 列出游戏中提及的事物（Objects）
