@@ -29,7 +29,7 @@
    ~~~
    2.使用transform.Translate
    ~~~
-     public float speed;
+           public float speed;
 	   public float speed_down = 0f;
 	   private void Start()
 	   {
@@ -43,6 +43,23 @@
 		   transform.Translate(Vector3.down * speed_down * Time.deltaTime);
 	   }
    ~~~
+   3.使用Vector3建立增量
+   ~~~
+   
+        public float speed;
+        public float speed_down = 0f;
+        void Start()
+        {
+     
+        }
+        void Update()
+        {
+ 	   speed = 1f;
+	   speed_down += 0.01f;
+	   Vector3 temp = new Vector3 (speed * Time.deltaTime, -speed_down * Time.deltaTime, 0);  
+	   transform.position += temp;  
+        }
+   ~~~
 ***
 * *编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件*
 ~~~
